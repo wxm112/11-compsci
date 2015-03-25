@@ -95,7 +95,7 @@ describe SinglyLinkedList do
   describe 'to_s' do
     it "returns a string which contains all of the nodes' values" do
       @language.prepend('ruby').prepend('python')
-      expect(@language.to_s).to eq "python,ruby,java"
+      expect(@language.to_s).to eq "python, ruby, java"
     end
   end
 end

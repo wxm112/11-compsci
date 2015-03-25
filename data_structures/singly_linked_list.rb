@@ -1,5 +1,7 @@
 require 'pry'
+
 class SinglyLinkedList
+  include Enumerable
   attr_accessor :head
 
   def initialize(first_element=nil)
@@ -81,8 +83,16 @@ class SinglyLinkedList
     self
   end
 
+  def each
+    node = @head
+    while node
+      yield node.value
+      node = node.next
+    end
+  end
+
   def to_s
-    to_array.join(',')
+    to_array.join(', ')
   end
 
   class Node
